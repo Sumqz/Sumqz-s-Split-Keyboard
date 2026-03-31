@@ -1,6 +1,7 @@
 # Sumqz-s-Split-Keyboard
 
 
+<<<<<<< Updated upstream
 # Sumqz-s-Split-Keyboard
 
 Hey everyone this is my Split Keyboard. I always felt that traditional Keyboard were functional but boring so i decided to build my own split keyboard. It can attach to the other half with magnets and work completely wirelessly. It includes a nrf52840. It's hotswappable and easy to make it at home. To use it you just need to flash the .ino file on the nrf52840 and connect it to the PC. It can be made into a full 75% Keyboard within seconds just by putting the two side together with the magnets. 
@@ -17,6 +18,13 @@ It is hot-swappable, uses nRF52840 boards, and is made to be buildable at home.
 A DIY wireless split keyboard with magnetic attachment, hot-swap switches, and easy firmware flashing.
 
 ## Pictures
+=======
+## Short Description
+
+DIY wireless split keyboard with magnetic attachment and hot-swap sockets.
+
+Here are some pictures:
+>>>>>>> Stashed changes
 
 ![Assembled](Pictures/Assembled.jpg)
 ![Full](Pictures/Full.jpg)
@@ -30,6 +38,7 @@ A DIY wireless split keyboard with magnetic attachment, hot-swap switches, and e
 
 ## Bill of Materials
 
+<<<<<<< Updated upstream
 | Part | Qty | Notes |
 |---|---:|---|
 | nRF52840 (XIAO nRF52840) | 2 | One per side |
@@ -49,3 +58,28 @@ Flash the `.ino` firmware to each nRF52840 board, connect to PC, and use.
 
 
 
+=======
+| Part | Qty | Notes | Link |
+|---|---:|---|---|
+| nRF52840 (XIAO nRF52840) | 2 | One per side | [Buy](https://it.aliexpress.com/item/1005006988954136.html) |
+| MCP23017 GPIO Expander | 2 | MCP23017_SP, DIP-28 package required | [Buy](https://it.aliexpress.com/item/1005009603989894.html) |
+| LiPo 1200mAh | 2 | One per side | [Buy](https://it.aliexpress.com/item/1005011550469394.html) |
+| Buzzer 12x9.5 / RM7.6 | 2 | Match PCB footprint pin spacing | [Buy](https://it.aliexpress.com/item/1005002576043967.html) |
+| Switches (Holy Panda) | 87 | Total keys | [Buy](https://it.aliexpress.com/item/1005004388563696.html) |
+| Keycaps (generic) | 87 | Match your layout | [Buy](https://it.aliexpress.com/item/1005011879391386.html) |
+| Diodes 1N4148W (SOD-123) | 87 | One per switch | [Buy](https://it.aliexpress.com/item/1005003194674618.html) |
+| Resistor 4.7k (0805) | 4 | R1, R2, R5, R6 | [Buy](https://it.aliexpress.com/item/1005011649990763.html) |
+| Resistor 806k (0805) | 2 | R3, R7 | [Buy](https://it.aliexpress.com/item/1005011649990763.html) |
+| Resistor 2M (0805) | 2 | R4, R8 | [Buy](https://it.aliexpress.com/item/1005011649990763.html) |
+
+Resistor note: it is usually cheaper to buy one full resistor set (0805 assortment) instead of buying each value separately.
+
+## Quick Compatibility Check
+
+- MCU: looks correct if the listing is really XIAO nRF52840.
+- Diodes: good if they are really SOD-123 1N4148W.
+- Resistors: must be 0805 values 4.7k, 806k, 2M.
+- Buzzer: PCB footprint is 12x9.5 with 7.6 mm pin spacing, so verify that before buying.
+- MCP: your PCB uses a DIP-28 MCP23017 chip, not a pre-built module board.
+- Important: your PCB switch footprints are Choc (`SW_choc_v1...`). Most Holy Panda switches are MX-style, so they may NOT fit. Use Choc-compatible switches unless you redesign footprints.
+>>>>>>> Stashed changes
