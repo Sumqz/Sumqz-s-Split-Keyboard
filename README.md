@@ -6,6 +6,8 @@ I always felt that traditional keyboards were functional but boring, so I decide
 
 It is hot-swappable, uses nRF52840 boards, and is designed to be easy to build at home.
 
+I sanity-checked this design with my friend before finalizing it.
+
 ## Short Description
 
 A DIY wireless split keyboard with magnetic attachment and hot-swap sockets.
@@ -47,6 +49,12 @@ PCB and case are not included because they are custom-made.
 
 Resistor note: it is usually cheaper to buy one full 0805 resistor assortment than to buy each value separately.
 
+## How to Use
+
+Flash the `.ino` firmware to both nRF52840 boards. Then connect each half to your PC and test that every key works.
+
+You can use it as a split keyboard, or snap both halves together with magnets to use it like a full 75% style board.
+
 ## Firmware
 
-Flash the `.ino` firmware to each nRF52840 board, then connect each half to your PC.
+Firmware source: `Firmware/SplitKeyboard/SplitKeyboard.ino`
