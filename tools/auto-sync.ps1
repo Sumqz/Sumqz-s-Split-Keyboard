@@ -12,8 +12,10 @@ function Run-Git {
 $repoRoot = "C:\Users\elias\OneDrive\Splitkeeboard"
 Set-Location $repoRoot
 $env:GIT_TERMINAL_PROMPT = "0"
+$env:GCM_INTERACTIVE = "Never"
 
 Run-Git -GitArgs @("rev-parse", "--is-inside-work-tree")
+Run-Git -GitArgs @("pull", "--rebase", "--autostash", "origin", "main")
 
 $changes = git status --porcelain
 if (-not $changes) {
@@ -24,5 +26,4 @@ Run-Git -GitArgs @("add", "-A")
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Run-Git -GitArgs @("commit", "-m", "auto sync $timestamp")
-Run-Git -GitArgs @("pull", "--rebase", "origin", "main")
 Run-Git -GitArgs @("push", "origin", "main")
