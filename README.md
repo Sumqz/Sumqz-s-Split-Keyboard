@@ -68,15 +68,18 @@ Flash the `.ino` firmware to each nRF52840 board, connect to PC, and use.
 | Resistor 4.7k (0805) | 4 | R1, R2, R5, R6 | [Buy](https://it.aliexpress.com/item/1005007972213912.html) |
 | Resistor 806k (0805) | 2 | R3, R7 | [Buy](https://it.aliexpress.com/item/1005007972213912.html) |
 | Resistor 2M (0805) | 2 | R4, R8 | [Buy](https://it.aliexpress.com/item/1005007972213912.html) |
+| Magnets 6x2 | 8 | 2 Per hole | [Buy](https://it.aliexpress.com/item/1005009677185619.html)|
+| M3 Screw (and Nut) | 4 | 40mm | [Buy](https://it.aliexpress.com/item/1005008625463950.html)
+| M4 Screw  | 4 | 50mm | [Buy](https://it.aliexpress.com/item/1005008625463950.html)
+| M4 Screw nut  | 4 | M4 | [Buy](https://it.aliexpress.com/item/1005010329406193.html)
+PCB and Case aren't included since they are made from manufacturers or at home.
+About 20 euros will the PCB cost.
+
+Price comes up to about 100 euros without the PCB included
+
 
 Resistor note: it is usually cheaper to buy one full resistor set (0805 assortment) instead of buying each value separately.
 
 ## Quick Compatibility Check
 
-- MCU: looks correct if the listing is really XIAO nRF52840.
-- Diodes: good if they are really SOD-123 1N4148W.
-- Resistors: must be 0805 values 4.7k, 806k, 2M.
-- Buzzer: PCB footprint is 12x9.5 with 7.6 mm pin spacing, so verify that before buying.
-- MCP: your PCB uses a DIP-28 MCP23017 chip, not a pre-built module board.
-- Important: your PCB switch footprints are Choc (`SW_choc_v1...`). Most Holy Panda switches are MX-style, so they may NOT fit. Use Choc-compatible switches unless you redesign footprints.
->>>>>>> Stashed changes
+
