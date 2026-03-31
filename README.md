@@ -65,9 +65,9 @@ Flash the `.ino` firmware to each nRF52840 board, connect to PC, and use.
 | Switches (Holy Panda) | 87 | Total keys | [Buy](https://it.aliexpress.com/item/1005004388563696.html) |
 | Keycaps (generic) | 87 | Match your layout | [Buy](https://it.aliexpress.com/item/1005011879391386.html) |
 | Diodes 1N4148W (SOD-123) | 87 | One per switch | [Buy](https://it.aliexpress.com/item/1005003194674618.html) |
-| Resistor 4.7k (0805) | 4 | R1, R2, R5, R6 | [Buy](https://it.aliexpress.com/item/1005011649990763.html) |
-| Resistor 806k (0805) | 2 | R3, R7 | [Buy](https://it.aliexpress.com/item/1005011649990763.html) |
-| Resistor 2M (0805) | 2 | R4, R8 | [Buy](https://it.aliexpress.com/item/1005011649990763.html) |
+| Resistor 4.7k (0805) | 4 | R1, R2, R5, R6 | [Buy](https://it.aliexpress.com/item/1005007972213912.html) |
+| Resistor 806k (0805) | 2 | R3, R7 | [Buy](https://it.aliexpress.com/item/1005007972213912.html) |
+| Resistor 2M (0805) | 2 | R4, R8 | [Buy](https://it.aliexpress.com/item/1005007972213912.html) |
 
 Resistor note: it is usually cheaper to buy one full resistor set (0805 assortment) instead of buying each value separately.
 
