@@ -3,6 +3,7 @@ $ErrorActionPreference = "Stop"
 
 $repoRoot = "C:\Users\elias\OneDrive\Splitkeeboard"
 Set-Location $repoRoot
+$env:GIT_TERMINAL_PROMPT = "0"
 
 try {
   git rev-parse --is-inside-work-tree | Out-Null
