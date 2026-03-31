@@ -21,7 +21,7 @@ A DIY wireless split keyboard with magnetic attachment, hot-swap switches, and e
 DIY wireless split keyboard with magnetic attachment and hot-swap sockets.
 
 Here are some pictures:
->>>>>>> Stashed changes
+
 
 ![Assembled](Pictures/Assembled.jpg)
 ![Full](Pictures/Full.jpg)
