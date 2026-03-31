@@ -1,5 +1,8 @@
 # Sumqz-s-Split-Keyboard
 
+##NOTE TO REVIEWER FROM BLUEPRINT: Because the projects exceeds the 100 dollar price limit of T3 projects i am willing to pay the additional 50 dollars needed. I am happy with a partial grant!
+
+
 Hey everyone, this is my split keyboard project.
 
 I always felt that traditional keyboards were functional but boring, so I decided to build my own. It can work as two separate halves or snap together with magnets to become a full 75% style keyboard in seconds.
@@ -44,6 +47,8 @@ A DIY wireless split keyboard with magnetic attachment and hot-swap sockets.
 | M3 screw + nut | 4 | 40 mm | [Buy](https://it.aliexpress.com/item/1005008625463950.html) |
 | M4 screw | 4 | 50 mm | [Buy](https://it.aliexpress.com/item/1005008625463950.html) |
 | M4 nut | 4 | M4 | [Buy](https://it.aliexpress.com/item/1005010329406193.html) |
+
+# Total price: about 130 euros or 150 dollars
 
 PCB and case are not included because they are custom-made.
 
