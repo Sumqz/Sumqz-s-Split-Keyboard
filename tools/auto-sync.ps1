@@ -1,23 +1,28 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+function Run-Git {
+  param([string[]]$GitArgs)
+  & git @GitArgs
+  if ($LASTEXITCODE -ne 0) {
+    throw "git $($GitArgs -join ' ') failed with exit code $LASTEXITCODE"
+  }
+}
+
 $repoRoot = "C:\Users\elias\OneDrive\Splitkeeboard"
 Set-Location $repoRoot
 $env:GIT_TERMINAL_PROMPT = "0"
 
-try {
-  git rev-parse --is-inside-work-tree | Out-Null
-} catch {
-  exit 1
-}
+Run-Git -GitArgs @("rev-parse", "--is-inside-work-tree")
 
 $changes = git status --porcelain
 if (-not $changes) {
   exit 0
 }
 
-git add -A
+Run-Git -GitArgs @("add", "-A")
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-git commit -m "auto sync $timestamp" | Out-Null
-git push origin main | Out-Null
+Run-Git -GitArgs @("commit", "-m", "auto sync $timestamp")
+Run-Git -GitArgs @("pull", "--rebase", "origin", "main")
+Run-Git -GitArgs @("push", "origin", "main")
