@@ -49,7 +49,7 @@ A DIY wireless split keyboard with magnetic attachment and hot-swap sockets.
 | M4 nut | 4 | M4 | [Buy](https://it.aliexpress.com/item/1005010329406193.html) |
 | Hotswap sockets | 87 | choc | [But](https://it.aliexpress.com/item/1005008543325730.html)
 
-# Total price: about 130 euros or 150 dollars
+# Total price: about 150 euros or 167 dollars
 
 PCB and case are not included because they are custom-made.
 
