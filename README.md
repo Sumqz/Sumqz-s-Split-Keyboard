@@ -1,6 +1,6 @@
 # Sumqz-s-Split-Keyboard
 
-##NOTE TO REVIEWER FROM BLUEPRINT: Because the projects exceeds the 100 dollar price limit of T3 projects i am willing to pay the additional 50 dollars needed. I am happy with a partial grant!
+## NOTE TO REVIEWER FROM BLUEPRINT: Because the projects exceeds the 100 dollar price limit of T3 projects i am willing to pay the additional 50 dollars needed. I am happy with a partial grant!
 
 
 Hey everyone, this is my split keyboard project.
