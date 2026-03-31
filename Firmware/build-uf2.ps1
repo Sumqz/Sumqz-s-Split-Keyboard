@@ -6,6 +6,7 @@ $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $arduinoCli = "C:\Program Files\Arduino CLI\arduino-cli.exe"
+$uf2Conv = "C:\Users\elias\AppData\Local\Arduino15\packages\adafruit\hardware\nrf52\1.7.0\tools\uf2conv\uf2conv.py"
 $sketchDir = Join-Path $PSScriptRoot "SplitKeyboard"
 $buildRoot = Join-Path $PSScriptRoot "build"
 $leftBuild = Join-Path $buildRoot "left"
@@ -32,18 +33,30 @@ Write-Host "Compiling RIGHT..."
   --output-dir $rightBuild `
   $sketchDir
 
-$leftUf2 = Get-ChildItem -Path $leftBuild -Filter *.uf2 -File | Select-Object -First 1
-$rightUf2 = Get-ChildItem -Path $rightBuild -Filter *.uf2 -File | Select-Object -First 1
+$leftHex = Join-Path $leftBuild "SplitKeyboard.ino.hex"
+$rightHex = Join-Path $rightBuild "SplitKeyboard.ino.hex"
+$leftUf2Out = Join-Path $leftBuild "SplitKeyboard-left.uf2"
+$rightUf2Out = Join-Path $rightBuild "SplitKeyboard-right.uf2"
 
-if (-not $leftUf2 -or -not $rightUf2) {
-  throw "UF2 output not found. Check compile logs and FQBN."
+if (-not (Test-Path $leftHex) -or -not (Test-Path $rightHex)) {
+  throw "Expected HEX output not found. Check compile logs and FQBN."
 }
 
-Copy-Item $leftUf2.FullName (Join-Path $prodDir "SplitKeyboard-left.uf2") -Force
-Copy-Item $rightUf2.FullName (Join-Path $prodDir "SplitKeyboard-right.uf2") -Force
+if (-not (Test-Path $uf2Conv)) {
+  throw "uf2conv.py not found at $uf2Conv"
+}
+
+Write-Host "Converting LEFT HEX to UF2..."
+python $uf2Conv -c -f 0xADA52840 -o $leftUf2Out $leftHex | Out-Null
+
+Write-Host "Converting RIGHT HEX to UF2..."
+python $uf2Conv -c -f 0xADA52840 -o $rightUf2Out $rightHex | Out-Null
+
+Copy-Item $leftUf2Out (Join-Path $prodDir "SplitKeyboard-left.uf2") -Force
+Copy-Item $rightUf2Out (Join-Path $prodDir "SplitKeyboard-right.uf2") -Force
 
 Write-Host ""
 Write-Host "Done."
-Write-Host "LEFT : $($leftUf2.FullName)"
-Write-Host "RIGHT: $($rightUf2.FullName)"
+Write-Host "LEFT : $leftUf2Out"
+Write-Host "RIGHT: $rightUf2Out"
 Write-Host "Copied to: $prodDir"

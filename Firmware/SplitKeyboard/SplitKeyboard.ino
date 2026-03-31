@@ -14,17 +14,13 @@ constexpr uint8_t kCols = 8;
 constexpr uint8_t kMcpAddress = 0x20;
 constexpr uint8_t kDebounceMs = 5;
 
-// Netlist mapping:
-// BT_PIN -> P0.02 (A0), BZ_PIN -> P0.03 (D1)
 constexpr uint8_t kBatterySensePin = A0;
 constexpr uint8_t kBuzzerPin = D1;
 
-// VBAT --806k-- BT_PIN --2M-- GND
 constexpr float kBatteryDividerScale = (806.0f + 2000.0f) / 2000.0f;
 constexpr float kBatteryEmptyV = 3.30f;
 constexpr float kBatteryFullV = 4.20f;
 
-// HID usage IDs
 constexpr uint8_t H_A = 0x04;
 constexpr uint8_t H_B = 0x05;
 constexpr uint8_t H_C = 0x06;
@@ -103,9 +99,8 @@ constexpr KeyDef N = {0, 0};
 constexpr KeyDef K(uint8_t usage) { return {usage, 0}; }
 constexpr KeyDef M(uint8_t modifier) { return {0, modifier}; }
 
-// MCP23017 pin mapping
-constexpr uint8_t kColPins[kCols] = {0, 1, 2, 3, 4, 5, 6, 7};   // GPA0..GPA7
-constexpr uint8_t kRowPins[kRows] = {8, 9, 10, 11, 12, 13};      // GPB0..GPB5
+constexpr uint8_t kColPins[kCols] = {0, 1, 2, 3, 4, 5, 6, 7};
+constexpr uint8_t kRowPins[kRows] = {8, 9, 10, 11, 12, 13};
 
 const KeyDef kLeftKeymap[kRows][kCols] = {
   {K(H_ESC), K(H_1), K(H_2), K(H_3), K(H_4), K(H_5), K(H_6), K(H_7)},
@@ -176,7 +171,7 @@ void sendKeyboardReport() {
   }
 
   HID_REPORT report;
-  report.data[0] = 1;  // keyboard report ID in USBKeyboard implementation
+  report.data[0] = 1;
   report.data[1] = modifierMask;
   report.data[2] = 0;
   report.data[3] = usages[0];
@@ -233,7 +228,7 @@ void reportBatteryIfDue() {
   Serial.print(vbat, 2);
   Serial.println("V)");
 }
-}  // namespace
+}
 
 void setup() {
   Serial.begin(115200);
